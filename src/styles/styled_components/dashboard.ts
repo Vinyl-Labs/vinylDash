@@ -20,30 +20,21 @@ const dashContainer = styled.div`
   margin: 2em 0 2em 0;
 `;
 
-const navbar = styled.div`
-  background: black;
-  align-self: start;
-  justify-self: center;
-  height: 400px;
-  width: 60%;
-  background: white;
-`;
-
 const headerContainer = styled.div`
   text-align: center;
   font-size: 3rem;
   background-color: white;
   grid-area: header;
+  /* box-shadow: 20px 10px 50px 10px lightgrey; */
 `;
 
-const navContainer = styled.div`
+const sidebar = styled.div`
   display: grid;
   grid-area: nav;
 `;
 
 const eventContainer = styled.div`
   text-align: center;
-  font-size: 3rem;
   background-color: white;
   grid-area: event;
 `;
@@ -61,7 +52,6 @@ export {
   detailsContainer,
   eventContainer,
   mainContainer,
-  navContainer,
-  headerContainer,
-  navbar
+  sidebar,
+  headerContainer
 };
