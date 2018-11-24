@@ -26,6 +26,7 @@ const navItem = styled.div`
     background: white;
   }
   grid-template-columns: 40% 60%;
+  overflow: hidden;
 `;
 
 const navIcon = styled.img`

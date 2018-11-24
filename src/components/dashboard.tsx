@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as S from "./../styles/styled_components/dashboard";
+import Header from "./header";
 import Navigation from "./navigation";
 
 class Dashboard extends React.Component {
@@ -7,7 +8,9 @@ class Dashboard extends React.Component {
     return (
       <S.mainContainer>
         <S.dashContainer>
-          <S.headerContainer />
+          <S.headerContainer>
+            <Header />
+          </S.headerContainer>
           <S.sidebar>
             <Navigation />
           </S.sidebar>
