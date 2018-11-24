@@ -20,6 +20,12 @@ const dashContainer = styled.div`
   margin: 0 0 2em 0;
 `;
 
+const eventContainer = styled.div`
+  display: grid;
+  grid-area: event;
+  height: 93%;
+`;
+
 const headerContainer = styled.div`
   display: grid;
   text-align: center;
@@ -34,25 +40,20 @@ const sidebar = styled.div`
   grid-area: nav;
 `;
 
-const eventContainer = styled.div`
-  text-align: center;
-  background-color: white;
-  grid-area: event;
-`;
-
 const detailsContainer = styled.div`
   text-align: center;
   font-size: 3rem;
   background-color: white;
   grid-area: detail;
   width: 93%;
+  height: 93%;
 `;
 
 export {
   dashContainer,
   detailsContainer,
-  eventContainer,
   mainContainer,
   sidebar,
-  headerContainer
+  headerContainer,
+  eventContainer
 };
