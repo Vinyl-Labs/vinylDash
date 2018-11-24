@@ -12,7 +12,7 @@ const navContainer = styled.div`
 
 const navItem = styled.div`
   display: grid;
-  font-size: 1.5em;
+  font-size: 1em;
   height: 70px;
   color: #4a4a4a;
   border-bottom: 0.05em solid lightgray;
