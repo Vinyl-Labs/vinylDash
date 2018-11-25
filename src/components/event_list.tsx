@@ -8,7 +8,6 @@ function EventList(): JSX.Element {
         <S.eventTitle>Bounce House</S.eventTitle>
         <S.eventInfo>Aurora</S.eventInfo>
         <S.eventDate>Now</S.eventDate>
-        <S.accentTab />
       </S.event>
       <S.event>
         <S.eventTitle>The Rub</S.eventTitle>

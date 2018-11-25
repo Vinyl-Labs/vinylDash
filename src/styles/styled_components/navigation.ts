@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const navContainer = styled.div`
-  margin: 2em 0 0 0;
   align-self: start;
   justify-self: center;
   height: auto;
@@ -27,6 +26,7 @@ const navItem = styled.div`
   }
   grid-template-columns: 40% 60%;
   overflow: hidden;
+  cursor: pointer;
 `;
 
 const navIcon = styled.img`
@@ -38,6 +38,7 @@ const navText = styled.p`
   align-self: center;
   justify-self: start;
   margin: 0;
+  font-weight: 100;
 `;
 
 export { navContainer, navItem, navIcon, navText };
