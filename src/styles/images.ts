@@ -1,4 +1,9 @@
 const images = {
+  detail: {
+    artistIcon: require("./../assets/images/artist_icon.jpg"),
+    box: require("./../assets/images/box.jpg"),
+    header: require("./../assets/images/details_header.png")
+  },
   header: {
     logo: require("./../assets/images/vinyl_logo.png"),
     profile: require("./../assets/images/profile.png")

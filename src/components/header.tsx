@@ -6,6 +6,7 @@ function Header(): JSX.Element {
   const header = (
     <S.headerContent>
       <S.logo src={images.header.logo} />
+      <S.createEventButton>Create Event</S.createEventButton>
       <S.profileContainer>
         <S.profile src={images.header.profile} />
         <S.profileText>Vinyl Labs</S.profileText>

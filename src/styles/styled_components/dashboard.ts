@@ -3,6 +3,7 @@ import styled from "styled-components";
 const mainContainer = styled.div`
   display: grid;
   background: #e4e6eb;
+  height: 100%;
 `;
 
 const dashContainer = styled.div`
@@ -11,19 +12,18 @@ const dashContainer = styled.div`
   grid-template-rows: 80px repeat(2, 400px);
   grid-template-areas:
     "header header header header header header header header header header header header header header header header"
-    "nav nav nav nav event event event detail detail detail detail detail detail detail detail detail"
-    "nav nav nav nav event event event detail detail detail detail detail detail detail detail detail";
+    "... nav nav nav nav event event event detail detail detail detail detail detail detail ..."
+    "... nav nav nav nav event event event detail detail detail detail detail detail detail ...";
   grid-auto-flow: dense;
   grid-row-gap: 2em;
   grid-column-gap: 5px;
   grid-row-start: 1em;
-  margin: 0 0 2em 0;
+  margin: 2em 0 2em 0;
 `;
 
 const eventContainer = styled.div`
   display: grid;
   grid-area: event;
-  height: 93%;
 `;
 
 const headerContainer = styled.div`
@@ -41,12 +41,8 @@ const sidebar = styled.div`
 `;
 
 const detailsContainer = styled.div`
-  text-align: center;
-  font-size: 3rem;
-  background-color: white;
   grid-area: detail;
-  width: 93%;
-  height: 93%;
+  display: grid;
 `;
 
 export {

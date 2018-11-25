@@ -26,6 +26,7 @@ const event = styled.div`
   grid-template-columns: 10% 30% 30 30%;
   grid-template-rows: 35% 10% 10% 10% 35%;
   overflow: hidden;
+  cursor: pointer;
   grid-template-areas:
     "tab ... ... ..."
     "tab title ... ..."
@@ -39,6 +40,7 @@ const eventDate = styled.div`
   justify-self: center;
   align-self: center;
   margin: 0;
+  font-weight: 100;
 `;
 
 const eventTitle = styled.p`
@@ -52,6 +54,7 @@ const eventInfo = styled.p`
   justify-self: start;
   margin: 0;
   grid-area: info;
+  font-weight: 100;
 `;
 const accentTab = styled.div`
   background: black;
