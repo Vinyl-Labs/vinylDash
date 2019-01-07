@@ -2,28 +2,30 @@ import styled from "styled-components";
 
 const mainContainer = styled.div`
   display: grid;
-  background: #e4e6eb;
+  background: #f4f8f9;
   height: 100%;
 `;
 
 const dashContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(16, 0.25fr);
-  grid-template-rows: 80px repeat(2, 400px);
+  grid-template-rows: 80px repeat(2, 420px);
   grid-template-areas:
-    "header header header header header header header header header header header header header header header header"
-    "... nav nav nav nav event event event detail detail detail detail detail detail detail ..."
-    "... nav nav nav nav event event event detail detail detail detail detail detail detail ...";
+    "nav header header header header header header header header header header header header header header header"
+    "nav content content content content content content content content content content content content event event event"
+    "nav content content content content content content content content content content content content event event event";
   grid-auto-flow: dense;
-  grid-row-gap: 2em;
-  grid-column-gap: 5px;
   grid-row-start: 1em;
-  margin: 2em 0 2em 0;
+  margin: 0;
 `;
 
 const eventContainer = styled.div`
   display: grid;
   grid-area: event;
+  background: white;
+  border: lightgray;
+  border-left-width: 0.5px;
+  border-left-style: solid;
 `;
 
 const headerContainer = styled.div`
@@ -32,23 +34,24 @@ const headerContainer = styled.div`
   font-size: 3rem;
   background-color: white;
   grid-area: header;
+  border: lightgray;
+  border-bottom-width: 0.5px;
+  border-bottom-style: solid;
   /* box-shadow: 20px 10px 50px 10px lightgrey; */
 `;
 
 const sidebar = styled.div`
   display: grid;
   grid-area: nav;
-`;
-
-const detailsContainer = styled.div`
-  grid-area: detail;
-  display: grid;
+  background: white;
+  border: lightgray;
+  border-right-width: 0.5px;
+  border-right-style: solid;
 `;
 
 export {
-  dashContainer,
-  detailsContainer,
   mainContainer,
+  dashContainer,
   sidebar,
   headerContainer,
   eventContainer
