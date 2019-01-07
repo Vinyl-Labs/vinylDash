@@ -1,32 +1,52 @@
 import styled from "styled-components";
 
 const navContainer = styled.div`
+  display: grid;
   align-self: start;
   justify-self: center;
   height: auto;
-  width: 65%;
-  background: white;
-  box-shadow: 20px 20px 50px 10px lightgrey;
+  width: 100%;
+  grid-template-areas:
+    "logo"
+    "..."
+    "..."
+    "..."
+    "..."
+    "nav"
+    "nav"
+    "nav"
+    "nav"
+    "nav"
+    "nav"
+    "nav"
+    "nav"
+    "nav"
+    "nav"
+    "nav";
 `;
 
 const navItem = styled.div`
   display: grid;
-  font-size: 1em;
   height: 70px;
-  color: #4a4a4a;
-  border-bottom: 0.05em solid lightgray;
+  border-left: 5px solid white;
+
   &:focus {
     outline: 0;
   }
   &:hover {
-    background: #ececec;
+    border-left: 5px solid black;
   }
   &:active {
-    background: white;
+    border-left: 5px solid white;
   }
-  grid-template-columns: 40% 60%;
   overflow: hidden;
   cursor: pointer;
+`;
+const logo = styled.div`
+  grid-area: logo;
+  justify-self: center;
+  align-self: start;
+  height: 140px;
 `;
 
 const navIcon = styled.img`
@@ -34,11 +54,9 @@ const navIcon = styled.img`
   align-self: center;
   margin: 0;
 `;
-const navText = styled.p`
-  align-self: center;
-  justify-self: start;
-  margin: 0;
-  font-weight: 100;
+
+const logoIcon = styled.img`
+  margin: 20px 0px 0px 0px;
 `;
 
-export { navContainer, navItem, navIcon, navText };
+export { navContainer, navItem, navIcon, logo, logoIcon };

@@ -7,6 +7,12 @@ const eventList = styled.div`
   grid-auto-rows: auto;
   overflow: scroll;
 `;
+const eventTab = styled.div`
+  margin: 0;
+  height: 150px;
+  grid-auto-rows: auto;
+  border-bottom: 0.05em solid lightgray;
+`;
 
 const event = styled.div`
   display: grid;
@@ -62,4 +68,12 @@ const accentTab = styled.div`
   width: 25%;
 `;
 
-export { event, eventInfo, eventTitle, eventList, eventDate, accentTab };
+export {
+  event,
+  eventInfo,
+  eventTitle,
+  eventList,
+  eventDate,
+  accentTab,
+  eventTab
+};
