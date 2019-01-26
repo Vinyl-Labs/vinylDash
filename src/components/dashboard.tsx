@@ -1,5 +1,8 @@
+import { Maybe } from "ramda-fantasy";
 import * as React from "react";
-import EventContainer, { IEventState } from "src/state/containers/event_state";
+import EventContext, {
+  IEventContext
+} from "src/state/containers/event_state";
 import { Container, Subscribe } from "unstated";
 import * as S from "./../styles/styled_components/dashboard";
 import EventContent from "./event_content";
@@ -9,8 +12,8 @@ import Navigation from "./navigation";
 class Dashboard extends React.Component {
   public render() {
     return (
-      <Subscribe to={[EventContainer]}>
-        {(eventsContext: Container<IEventState>) => (
+      <Subscribe to={[EventContext]}>
+        {(eventsContext: Container<IEventContext>) => (
           <S.mainContainer>
             <S.dashContainer>
               <S.headerContainer />
@@ -18,9 +21,14 @@ class Dashboard extends React.Component {
                 <Navigation />
               </S.sidebar>
               <S.eventContainer>
-                <EventList eventsContext={eventsContext} />
+                <EventList />
               </S.eventContainer>
-              <EventContent />
+              {Maybe.isJust(eventsContext.state.selectedEvent) ? (
+                <EventContent
+                  event={eventsContext.state.selectedEvent}
+                  eventContext={eventsContext}
+                />
+              ) : null}
             </S.dashContainer>
           </S.mainContainer>
         )}
