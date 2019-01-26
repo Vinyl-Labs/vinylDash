@@ -5,6 +5,7 @@ import { Container, Subscribe } from "unstated";
 import * as S from "./../styles/styled_components/dashboard";
 import EventContent from "./event_content";
 import EventList from "./event_list";
+import Header from "./header";
 import Navigation from "./navigation";
 
 class Dashboard extends React.Component {
@@ -14,7 +15,9 @@ class Dashboard extends React.Component {
         {(eventsContext: Container<IEventState>) => (
           <S.mainContainer>
             <S.dashContainer>
-              <S.headerContainer />
+              <S.headerContainer>
+                <Header />
+              </S.headerContainer>
               <S.sidebar>
                 <Navigation />
               </S.sidebar>

@@ -1,7 +1,7 @@
 import { Maybe } from "ramda-fantasy";
 import { IEvent, IEventTracks } from "src/helpers/events";
 import { Container } from "unstated";
-import db from "../firebase_adapter";
+import { db } from "../firebase_adapter";
 
 const { Just, Nothing } = Maybe;
 
