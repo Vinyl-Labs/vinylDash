@@ -30,6 +30,16 @@ const profileText = styled.p`
   justify-self: start;
   margin: 0 0 0 15px;
   font-size: 0.35em;
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    color: blue;
+    cursor: pointer;
+  }
+  &:active {
+    color: #e4e6eb;
+  }
 `;
 const createEventButton = styled.div`
   align-self: center;

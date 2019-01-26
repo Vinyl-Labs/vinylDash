@@ -153,6 +153,7 @@ const trackDetails = styled.div`
   grid-template-rows: 35% 10% 10% 10% 35%;
   overflow: hidden;
   font-family: "Montserrat", sans-serif;
+
   grid-template-areas:
     "... ... ... ..."
     "... title ... ..."
