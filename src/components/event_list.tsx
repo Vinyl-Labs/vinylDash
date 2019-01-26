@@ -1,11 +1,11 @@
 import * as React from "react";
 import { IEvent } from "src/helpers/events";
-import EventContext, { IEventContext } from "src/state/containers/event_state";
+import EventState, { IEventState } from "src/state/containers/event_state";
 import { Container, Subscribe } from "unstated";
 import * as S from "../styles/styled_components/event_list";
 
 function EventList() {
-  function selectEvent(container: Container<IEventContext>, id: string) {
+  function selectEvent(container: Container<IEventState>, id: string) {
     const selectedEvent = container.state.events
       .map(event => event.find(e => e.id === id))
       .getOrElse(null);
@@ -14,7 +14,7 @@ function EventList() {
     container.selectEvent(selectedEvent);
   }
 
-  function List(events: IEvent[], container: Container<IEventContext>) {
+  function List(events: IEvent[], container: Container<IEventState>) {
     return events.map(e => (
       // @ts-ignore
       // tslint:disable-next-line:jsx-no-lambda
@@ -26,8 +26,8 @@ function EventList() {
     ));
   }
   const eventList = (
-    <Subscribe to={[EventContext]}>
-      {(eventContainer: Container<IEventContext>) => (
+    <Subscribe to={[EventState]}>
+      {(eventContainer: Container<IEventState>) => (
         <S.eventList>
           {/* <S.eventTab /> */}
           {eventContainer.state.events

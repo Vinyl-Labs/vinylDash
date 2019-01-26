@@ -1,35 +1,19 @@
 import { Maybe } from "ramda-fantasy";
 import * as React from "react";
 import { IEvent } from "src/helpers/events";
-import EventContext, { IEventContext } from "src/state/containers/event_state";
+import EventState, { IEventState } from "src/state/containers/event_state";
 import images from "src/styles/images";
 import { Container, Subscribe } from "unstated";
 import * as S from "./../styles/styled_components/event_content";
 
 interface IEventContent {
   event: Maybe<IEvent>;
-  eventContext: Container<IEventContext>;
+  eventContext: Container<IEventState>;
 }
 
 class EventContent extends React.Component<IEventContent> {
-  public componentDidMount() {
-    // @ts-ignore
-    // this.props.eventContext.setTrackListener();
-    // tslint:disable-next-line:no-console
-    // console.log("set Tracks");
-  }
-
   public render() {
     function trackList(event: Maybe<IEvent>) {
-      // const tracks = eventContext.state.selectedEvent
-      //   .map(list =>
-      //     list.sort(
-      //       (a, b) =>
-      //         new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime()
-      //     )
-      //   )
-      //   .getOrElse([]);
-
       return event
         .map(e =>
           e.eventTracks
@@ -52,7 +36,7 @@ class EventContent extends React.Component<IEventContent> {
     }
 
     return (
-      <Subscribe to={[EventContext]}>
+      <Subscribe to={[EventState]}>
         {eventContext => (
           <S.ContentContainer>
             <S.contentHeader>

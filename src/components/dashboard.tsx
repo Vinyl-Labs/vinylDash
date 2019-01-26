@@ -1,8 +1,6 @@
 import { Maybe } from "ramda-fantasy";
 import * as React from "react";
-import EventContext, {
-  IEventContext
-} from "src/state/containers/event_state";
+import EventState, { IEventState } from "src/state/containers/event_state";
 import { Container, Subscribe } from "unstated";
 import * as S from "./../styles/styled_components/dashboard";
 import EventContent from "./event_content";
@@ -12,8 +10,8 @@ import Navigation from "./navigation";
 class Dashboard extends React.Component {
   public render() {
     return (
-      <Subscribe to={[EventContext]}>
-        {(eventsContext: Container<IEventContext>) => (
+      <Subscribe to={[EventState]}>
+        {(eventsContext: Container<IEventState>) => (
           <S.mainContainer>
             <S.dashContainer>
               <S.headerContainer />

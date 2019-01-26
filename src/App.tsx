@@ -2,10 +2,10 @@ import * as React from "react";
 import { Container } from "unstated";
 import "./App.css";
 import Dashboard from "./components/dashboard";
-import { IEventContext } from "./state/containers/event_state";
+import { IEventState } from "./state/containers/event_state";
 
 interface IAppProps {
-  eventsContext: Container<IEventContext>;
+  eventsContext: Container<IEventState>;
 }
 
 class App extends React.Component<IAppProps> {

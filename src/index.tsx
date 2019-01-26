@@ -4,12 +4,12 @@ import { Container, Provider, Subscribe } from "unstated";
 import App from "./App";
 import "./index.css";
 import registerServiceWorker from "./registerServiceWorker";
-import EventContext, { IEventContext } from "./state/containers/event_state";
+import EventState, { IEventState } from "./state/containers/event_state";
 
 ReactDOM.render(
   <Provider>
-    <Subscribe to={[EventContext]}>
-      {(eventsContext: Container<IEventContext>) => (
+    <Subscribe to={[EventState]}>
+      {(eventsContext: Container<IEventState>) => (
         <App eventsContext={eventsContext} />
       )}
     </Subscribe>

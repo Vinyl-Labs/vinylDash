@@ -5,18 +5,17 @@ import db from "../firebase_adapter";
 
 const { Just, Nothing } = Maybe;
 
-interface IEventContext {
+interface IEventState {
   events: Maybe<IEvent[]>;
   selectedEvent: Maybe<IEvent>;
-  tracks: Maybe<IEventTracks[]>;
 }
 
-class EventContext extends Container<IEventContext> {
+class EventState extends Container<IEventState> {
   public state = {
     events: Nothing(),
-    selectedEvent: Nothing(),
-    tracks: Nothing()
+    selectedEvent: Nothing()
   };
+
   public setEventListener() {
     if (Maybe.isNothing(this.state.events)) {
       db.collection("events").onSnapshot(querySnapshot => {
@@ -25,17 +24,16 @@ class EventContext extends Container<IEventContext> {
           const event = doc.data() as IEvent;
 
           const tracks = this.getTracks(doc.id);
-          // tslint:disable-next-line:no-console
-          console.log("Tracks", tracks);
+
           event.eventTracks = Maybe(tracks);
+
           // tslint:disable-next-line:no-console
           console.log(event);
-
           events.push(event);
         });
         const data = events;
         // tslint:disable-next-line:no-console
-        console.log(data);
+        console.log("Events: ", data);
         this.setState({ events: Just(data) });
       });
     }
@@ -52,9 +50,6 @@ class EventContext extends Container<IEventContext> {
           tracks.push(track);
         });
       });
-    this.setState({
-      tracks: Just(tracks)
-    });
     return tracks;
   }
 
@@ -65,5 +60,5 @@ class EventContext extends Container<IEventContext> {
   }
 }
 
-export default EventContext;
-export { IEventContext };
+export default EventState;
+export { IEventState };
