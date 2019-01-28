@@ -8,34 +8,32 @@ import EventList from "./event_list";
 import Header from "./header";
 import Navigation from "./navigation";
 
-class Dashboard extends React.Component {
-  public render() {
-    return (
-      <Subscribe to={[EventState]}>
-        {(eventsContext: Container<IEventState>) => (
-          <S.mainContainer>
-            <S.dashContainer>
-              <S.headerContainer>
-                <Header />
-              </S.headerContainer>
-              <S.sidebar>
-                <Navigation />
-              </S.sidebar>
-              <S.eventContainer>
-                <EventList />
-              </S.eventContainer>
-              {Maybe.isJust(eventsContext.state.selectedEvent) ? (
-                <EventContent
-                  event={eventsContext.state.selectedEvent}
-                  eventContext={eventsContext}
-                />
-              ) : null}
-            </S.dashContainer>
-          </S.mainContainer>
-        )}
-      </Subscribe>
-    );
-  }
+function Dashboard() {
+  return (
+    <Subscribe to={[EventState]}>
+      {(eventsContext: Container<IEventState>) => (
+        <S.mainContainer>
+          <S.dashContainer>
+            <S.headerContainer>
+              <Header />
+            </S.headerContainer>
+            <S.sidebar>
+              <Navigation />
+            </S.sidebar>
+            <S.eventContainer>
+              <EventList />
+            </S.eventContainer>
+            {Maybe.isJust(eventsContext.state.selectedEvent) ? (
+              <EventContent
+                event={eventsContext.state.selectedEvent}
+                eventContext={eventsContext}
+              />
+            ) : null}
+          </S.dashContainer>
+        </S.mainContainer>
+      )}
+    </Subscribe>
+  );
 }
 
 export default Dashboard;

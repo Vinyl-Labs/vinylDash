@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useEffect } from "react";
 import { Container } from "unstated";
 import "./App.css";
 import Dashboard from "./components/dashboard";
@@ -8,16 +9,14 @@ interface IAppProps {
   eventsContext: Container<IEventState>;
 }
 
-class App extends React.Component<IAppProps> {
-  public componentDidMount() {
+function App(props: IAppProps) {
+  useEffect(() => {
     // @ts-ignore
     // The app fetches firestore data at launch
-    this.props.eventsContext.setEventListener();
-  }
+    props.eventsContext.setEventListener();
+  }, []);
 
-  public render() {
-    return <Dashboard />;
-  }
+  return <Dashboard />;
 }
 
 export default App;
