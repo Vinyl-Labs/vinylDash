@@ -1,6 +1,5 @@
 // tslint:disable:no-console
 
-import { Maybe } from "ramda-fantasy";
 import * as React from "react";
 import { IEvent } from "src/helpers/events";
 import EventState, { IEventState } from "src/state/containers/event_state";
@@ -9,30 +8,26 @@ import { Container, Subscribe } from "unstated";
 import * as S from "./../styles/styled_components/event_content";
 
 interface IEventContent {
-  event: Maybe<IEvent>;
+  event: IEvent;
   eventContext: Container<IEventState>;
 }
 
 function EventContent(props: IEventContent) {
-  function trackList(event: Maybe<IEvent>) {
-    return event
-      .map(e =>
-        e.eventTracks
-          .map(track => {
-            return track.map(t => (
-              <S.track key={t.id}>
-                <S.trackDetails>
-                  <S.trackTitle>{t.title}</S.trackTitle>
-                  <S.trackArtist>{t.artist}</S.trackArtist>
-                </S.trackDetails>
-                <S.playback>
-                  <S.playButton src={images.events.playButton} />
-                </S.playback>
-              </S.track>
-            ));
-          })
-          .getOrElse([])
-      )
+  function trackList(event: IEvent) {
+    return event.eventTracks
+      .map(track => {
+        return track.map(t => (
+          <S.track key={t.id}>
+            <S.trackDetails>
+              <S.trackTitle>{t.title}</S.trackTitle>
+              <S.trackArtist>{t.artist}</S.trackArtist>
+            </S.trackDetails>
+            <S.playback>
+              <S.playButton src={images.events.playButton} />
+            </S.playback>
+          </S.track>
+        ));
+      })
       .getOrElse(null);
   }
 
@@ -43,12 +38,8 @@ function EventContent(props: IEventContent) {
           <S.contentHeader>
             <S.EventDetails>
               <S.eventTime>10:00pm-5:00am</S.eventTime>
-              <S.eventTitle>
-                {props.event.map(e => e.title).getOrElse("")}
-              </S.eventTitle>
-              <S.eventInfo>
-                {props.event.map(e => e.venue).getOrElse("")}
-              </S.eventInfo>
+              <S.eventTitle>{props.event.title}</S.eventTitle>
+              <S.eventInfo>{props.event.venue}</S.eventInfo>
             </S.EventDetails>
             <S.EventSwitch />
           </S.contentHeader>
