@@ -1,15 +1,14 @@
 // tslint:disable:no-console
 import { Maybe } from "ramda-fantasy";
-import { IUser } from "src/helpers/users";
 import { Container } from "unstated";
 import { auth } from "../firebase_adapter";
 
-const { Nothing } = Maybe;
+const { Nothing, Just } = Maybe;
 
 type AuthTypes = "email" | "facebook" | "google";
 
 interface IAuthState {
-  user: Maybe<IUser>;
+  user: Maybe<firebase.User>;
   signedIn: boolean;
   redirect: boolean;
 }
@@ -60,12 +59,14 @@ class AuthState extends Container<IAuthState> {
       if (user) {
         console.log("User logged in: ", user);
         this.setState({
-          signedIn: true
+          signedIn: true,
+          user: Just(user)
         });
       } else {
         console.log("User logged out");
         this.setState({
-          signedIn: false
+          signedIn: false,
+          user: Nothing()
         });
       }
       return;

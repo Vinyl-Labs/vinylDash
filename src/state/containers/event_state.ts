@@ -1,3 +1,5 @@
+// tslint:disable:no-console
+
 import { Maybe } from "ramda-fantasy";
 import { IEvent, IEventTracks } from "src/helpers/events";
 import { Container } from "unstated";
@@ -27,14 +29,13 @@ class EventState extends Container<IEventState> {
 
           event.eventTracks = Maybe(tracks);
 
-          // tslint:disable-next-line:no-console
           console.log(event);
           events.push(event);
         });
         const data = events;
-        // tslint:disable-next-line:no-console
+
         console.log("Events: ", data);
-        this.setState({ events: Just(data) });
+        this.setState({ events: Just(data), selectedEvent: Just(data[0]) });
       });
     }
   }

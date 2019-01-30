@@ -1,23 +1,30 @@
 import * as React from "react";
+import { useEffect } from "react";
 import { Container } from "unstated";
 import "./App.css";
 import Dashboard from "./components/dashboard";
+import Landing from "./components/landing";
+import { IUser } from "./helpers/users";
+import { IAuthState } from "./state/containers/auth_state";
 import { IEventState } from "./state/containers/event_state";
 
 interface IAppProps {
-  eventsContext: Container<IEventState>;
+  eventState: Container<IEventState>;
+  authState: Container<IAuthState>;
 }
 
-class App extends React.Component<IAppProps> {
-  public componentDidMount() {
+function App(props: IAppProps) {
+  useEffect(() => {
     // @ts-ignore
     // The app fetches firestore data at launch
-    this.props.eventsContext.setEventListener();
-  }
+    props.eventState.setEventListener();
+  }, []);
 
-  public render() {
-    return <Dashboard />;
-  }
+  const RenderDashboard = props.authState.state.user
+    .map((user: IUser) => <Dashboard key={user.uid} user={user} />)
+    .getOrElse(<Landing authState={props.authState} />);
+
+  return RenderDashboard;
 }
 
 export default App;
