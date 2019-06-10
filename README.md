@@ -12,6 +12,7 @@ If you would like to fork/clone this repository simply run `npm install` from wi
 
 ## Mockups
 - I designed the mockups using Figma. I wanted to use a clean and simple UI for the dashboard.
+- Logos, icons and other customer images were created with adobe illustrator.
 
   ![alt text](https://imgur.com/BJJhOMh.png "Dashboard View")
   ![alt text](https://imgur.com/7f6n41u.png "Create Event View")
