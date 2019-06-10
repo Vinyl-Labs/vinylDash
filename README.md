@@ -13,10 +13,8 @@ If you would like to fork/clone this repository simply run `npm install` from wi
 ## Planning Process and Approach
 
 - **Mockups**
--
-- I designed the mockups using Figma. I wanted to use a clean and simple UI for the dashboard. 
--
-  ![alt text](https://imgur.com/BJJhOMh.png "Dashboard View")
+- I designed the mockups using Figma. I wanted to use a clean and simple UI for the dashboard.
+- ![alt text](https://imgur.com/BJJhOMh.png "Dashboard View")
   ![alt text](https://imgur.com/7f6n41u.png "Create Event View")
   ![alt text](https://imgur.com/kKi8WuK.png "Music Analytics")
 
@@ -34,7 +32,6 @@ If you would like to fork/clone this repository simply run `npm install` from wi
   - Since I will be using data from external platforms in this project, I wanted a safe way to access and use this data. The functional concept`Maybe` allows me this security while also letting me keep type safety.
   -
   - **Styled Components:**
-
 
 ## Related Projects
 
