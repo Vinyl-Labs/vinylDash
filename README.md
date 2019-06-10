@@ -6,14 +6,6 @@
 
 Vinyl Dash is an admin dashboard for a DJ booking platform that allows users to manage their live sets and fanbase.
 
-## Related Projects
-
-- **Vinyl Box:**
-
-  - Vinyl box is an android things IOT application that allows you to capture, analyze, and Identify track audio.
-  - Every 15 seconds the application will attempt to "discover" the audio from the selected audio source. When successful the tracks metadata will be sent to the Firestore Database.
-  -
-
 ## Installation Instructions
 
 If you would like to fork/clone this repository simply run `npm install` from within your local directory to install all dependencies.
@@ -21,6 +13,9 @@ If you would like to fork/clone this repository simply run `npm install` from wi
 ## Planning Process and Approach
 
 - **Mockups**
+-
+- I designed the mockups using Figma. I wanted to use a clean and simple UI for the dashboard. 
+-
   ![alt text](https://imgur.com/BJJhOMh.png "Dashboard View")
   ![alt text](https://imgur.com/7f6n41u.png "Create Event View")
   ![alt text](https://imgur.com/kKi8WuK.png "Music Analytics")
@@ -37,4 +32,14 @@ If you would like to fork/clone this repository simply run `npm install` from wi
 - ## **Typescript:**
   - **Ramda Fantasy:**
   - Since I will be using data from external platforms in this project, I wanted a safe way to access and use this data. The functional concept`Maybe` allows me this security while also letting me keep type safety.
+  -
+  - **Styled Components:**
+
+
+## Related Projects
+
+- **Vinyl Box:**
+
+  - Vinyl box is an android things IOT application that allows you to capture, analyze, and Identify track audio.
+  - Every 15 seconds the application will attempt to "discover" the audio from the selected audio source. When successful the tracks metadata will be sent to the Firestore Database.
   -
