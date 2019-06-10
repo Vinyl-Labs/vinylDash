@@ -21,9 +21,9 @@ If you would like to fork/clone this repository simply run `npm install` from wi
 ## Planning Process and Approach
 
 - **Mockups**
-  ![alt text](https://imgur.com/BJJhOMh "Dashboard View")
-  ![alt text](https://imgur.com/7f6n41u "Create Event View")
-  ![alt text](https://imgur.com/kKi8WuK "Music Analytics")
+  ![alt text](https://imgur.com/BJJhOMh.png "Dashboard View")
+  ![alt text](https://imgur.com/7f6n41u.png "Create Event View")
+  ![alt text](https://imgur.com/kKi8WuK.png "Music Analytics")
 
 ## Technologies Used
 
