@@ -27,11 +27,11 @@ If you would like to fork/clone this repository simply run `npm install` from wi
 - **Firestore Realtime Database:**
   - Decided to use google Firestore for this project since I will be updating the database from several platforms: `Vinty Dash`, `Vinyl Box`, and `Vinyl app`.
   -
-  - **Typescript:**
-  - **Ramda Fantasy:**
+- **Typescript:**
+- **Ramda Fantasy:**
     - Since I will be using data from external platforms in this project, I wanted a safe way to access and use this data. The functional concept`Maybe` allows me this security while also letting me keep type safety.
   -
-  - **Styled Components:**
+- **Styled Components:**
 
 ## Related Projects
 
