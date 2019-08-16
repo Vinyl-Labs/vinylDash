@@ -1,11 +1,19 @@
 import * as React from "react";
-import { ChatWidget } from "src/components/chat_widget";
+import { Route } from "react-router";
+import routes from "src/helpers/routes";
 import { SideBarContainer } from "src/styles/styled_components/side_bar";
 
 function SideBar() {
   return (
     <SideBarContainer>
-      <ChatWidget />
+      {routes.map((route, index) => (
+        <Route
+          key={index}
+          path={route.path}
+          exact={true}
+          component={route.sidebar}
+        />
+      ))}
     </SideBarContainer>
   );
 }

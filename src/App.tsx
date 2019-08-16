@@ -1,13 +1,15 @@
+import createBrowserHistory from "history/createBrowserHistory";
 import * as React from "react";
 import { useEffect } from "react";
-import { ThemeProvider } from "styled-components";
+import { Router } from "react-router";
 import { Container } from "unstated";
 import Landing from "./components/landing";
 import Main from "./components/main";
 import { IUser } from "./helpers/users";
 import { IAuthState } from "./state/containers/auth_state";
 import { IEventState } from "./state/containers/event_state";
-import MainTheme from "./styles/themes";
+
+const history = createBrowserHistory();
 
 interface IAppProps {
   eventState: Container<IEventState>;
@@ -25,7 +27,7 @@ function App(props: IAppProps) {
     .map((user: IUser) => <Main key={user.uid} user={user} />)
     .getOrElse(<Landing authState={props.authState} />);
 
-  return <ThemeProvider theme={MainTheme}>{RenderDashboard}</ThemeProvider>;
+  return <Router history={history}>{RenderDashboard}</Router>;
 }
 
 export default App;
