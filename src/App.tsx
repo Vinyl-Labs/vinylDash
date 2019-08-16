@@ -1,12 +1,13 @@
 import * as React from "react";
 import { useEffect } from "react";
+import { ThemeProvider } from "styled-components";
 import { Container } from "unstated";
-import "./App.css";
-import Dashboard from "./components/dashboard";
 import Landing from "./components/landing";
+import Main from "./components/main";
 import { IUser } from "./helpers/users";
 import { IAuthState } from "./state/containers/auth_state";
 import { IEventState } from "./state/containers/event_state";
+import MainTheme from "./styles/themes";
 
 interface IAppProps {
   eventState: Container<IEventState>;
@@ -21,10 +22,10 @@ function App(props: IAppProps) {
   }, []);
 
   const RenderDashboard = props.authState.state.user
-    .map((user: IUser) => <Dashboard key={user.uid} user={user} />)
+    .map((user: IUser) => <Main key={user.uid} user={user} />)
     .getOrElse(<Landing authState={props.authState} />);
 
-  return RenderDashboard;
+  return <ThemeProvider theme={MainTheme}>{RenderDashboard}</ThemeProvider>;
 }
 
 export default App;
