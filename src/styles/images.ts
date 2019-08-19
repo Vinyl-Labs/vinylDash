@@ -1,4 +1,7 @@
 const images = {
+  artists: {
+    placeholder: require("./../assets/images/placeholder.png")
+  },
   events: {
     artistIcon: require("./../assets/images/artist_icon.jpg"),
     box: require("./../assets/images/box_icon.svg"),
